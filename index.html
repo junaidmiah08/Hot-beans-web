@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .home-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            text-align: center;
+        }
+    </style>
+    <script>
+        function detectBrowser() {
+            let userAgent = navigator.userAgent;
+            let browserMessage = "Your browser may have compatibility issues.";
+
+            if (userAgent.includes("Chrome")) {
+                browserMessage = "You are using Google Chrome.";
+            } else if (userAgent.includes("Firefox")) {
+                browserMessage = "You are using Firefox.";
+            } else if (userAgent.includes("Safari") && !userAgent.includes("Chrome")) {
+                browserMessage = "You are using Safari.";
+            } else if (userAgent.includes("Edg")) { 
+                browserMessage = "You are using Microsoft Edge.";
+            }
+
+            alert(browserMessage);
+        }
+
+        window.onload = function() {
+            alert("Welcome to Hot Beans Web!");
+            detectBrowser();
+        };
+    </script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="hb.png" alt="Logo">
+        </div>
+        <div>
+            <a href="index.html" class="active">HOME</a>
+            <a href="profiles.html">PROFILES</a>
+            <a href="jobs.html">JOBS</a>
+            <a href="apply.html">APPLY</a>
+            <a href="courses.html">COURSES</a>
+        </div>
+    </div>
+    <div class="home-container">
+        <div>
+            <h1>WELCOME TO HOT BEANS WEB</h1>
+            <h2>ABOUT US</h2>
+            <p>Welcome to Hot Beans Web, a pioneering web development company where creativity meets technical excellence. We specialize in building innovative, user-friendly, and high-performance websites tailored to meet diverse business and personal needs. 
+                At Hot Beans Web, we blend modern design principles with cutting-edge technologies to create seamless digital experiences. Whether it’s interactive web solutions, custom-built applications, or responsive design, our expert team ensures functionality and aesthetic appeal go hand in hand.
+                Driven by a passion for innovation, we constantly evolve with industry trends, adopting the latest in HTML, CSS, JavaScript, and backend technologies to bring ideas to life. Our commitment to precision, usability, and client satisfaction sets us apart in the ever-changing web landscape.
+                Join us.
+                .</p>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function confirmSubmission(event) {
+            event.preventDefault(); // Prevent the actual form submission
+            
+            let name = document.getElementById("name").value;
+            let email = document.getElementById("email").value;
+            
+            if (name.trim() === "" || email.trim() === "") {
+                alert("Please fill in all required fields.");
+                return false;
+            }
+            
+            document.getElementById("confirmationMessage").innerText = "Thank you, " + name + "! Your application has been submitted successfully.";
+            document.getElementById("confirmationMessage").style.display = "block";
+        }
+    </script>
+</head>
+<body>
+    <div class="navbar">
+        <div class="logo">
+            <img src="hb.png" alt="Logo">
+        </div>
+        <div>
+            <a href="home.html">HOME</a>
+            <a href="profiles.html">PROFILES</a>
+            <a href="jobs.html">JOBS</a>
+            <a href="apply.html" class="active">APPLY</a>
+            <a href="courses.html">COURSES</a>
+        </div>
+    </div>
+    <div class="application">
+        <h1>APPLICATION</h1>
+        <div class="form-section">
+            <form onsubmit="confirmSubmission(event)" method="post" style="width: 80%; margin: 0 auto; background-color: white; color: black; padding: 20px; border-radius: 8px;">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required><br><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required><br><br>
+
+                <label for="phone">Phone Number:</label><br>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number"><br><br>
+
+                <label for="cv">Insert CV:</label><br>
+                <input type="file" id="cv" name="cv" accept=".pdf,.doc,.docx" required><br><br>
+
+                <button type="submit" style="background-color: #333; color: white; padding: 10px 20px; border: none; border-radius: 5px; cursor: pointer;">Submit Application</button>
+            </form>
+            <p id="confirmationMessage" style="display: none; color: green; font-weight: bold;"></p>
+        </div>
+    </div>
+</body>
+</html>
+
